@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Cuprum:wght@600&family=Montserrat:wght@200;300;400&display=swap');
+
+/* reset pre-made css */
+body,ul,h1,h2{
+    margin: 0;
+    padding: 0;
+    
+}
+
+body{
+    background-color: #FBEEC1;
+}
+
+header{
+    width: 100%;
+    background: #000000;
+    padding: 6px 12px;
+    display: inline-block;
+    
+}
+
+form{
+    position: relative;
+    top: 250px;
+}
+
+form h1{
+    text-align: center;
+    margin: 20px;
+    font-family: 'Cuprum', sans-serif;
+
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 55px;
+    /* text-align: center; */
+   
+    color: #000000;
+}
+
+.form-group{
+    text-align: center;
+}
+
+.form-group label{
+    display: block;
+
+    margin: 10px 0; 
+
+    font-family: 'Cuprum', sans-serif;
+
+    font-size: 20px;
+}
+
+
+
+
+
+form .form-group input{
+    margin: 20px;
+    width: 45%;
+    height: 35px;
+    border-radius: 36px;
+    text-align: center;
+    font-family: 'Cuprum', sans-serif;
+}
+
+
+
+form button{
+    font-size: 15px;
+    background: #659DBD;
+    position: absolute;
+    box-sizing: border-box;
+    padding: 10px;
+    font-family: 'Cuprum', sans-serif;
+    white-space: nowrap;
+    border-radius: 10px;
+    margin: 15px;
+}
+
+form a{
+    text-align: center;
+    text-decoration: none;
+    position: absolute;
+    left: 45%;
+    margin: 17px ;
+    
+}
