@@ -30,6 +30,7 @@ def create_app():
     from .models import User
     # from .models import Reminder
   
+#   creates database
     with app.app_context():
         db.create_all()
 

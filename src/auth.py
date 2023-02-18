@@ -21,7 +21,6 @@ def login():
 
     if request.method == "POST":
         user_email = request.form.get('email')
-        user_name = request.form.get("userName")
         password = request.form.get('password')
 
 
@@ -32,18 +31,20 @@ def login():
             if check_password_hash(user.password,password):
 
                 # can use this to say welcome user_name, in the top right corner
-                name = user_name
+                name = user.username
                 login_message = "Logged in successfully as ".format(name)
 
                 flash(login_message,category="success")
 
                 #login user
                 login_user(user,remember=True)
+                
+                return redirect(url_for('views.home'))#return to home page
 
             else: 
                 flash("Incorrect email or password, Please try again!",category="error")
             
-            return redirect(url_for('views.home'))#return to home page
+           
         
         else:
             flash("Email doesn't exist",category="error")
@@ -91,6 +92,6 @@ def sign_up():
             flash(sign_up_msg,category="success")
             
             
-            return redirect(url_for("views.about"))
+            return redirect(url_for("views.home"))
 
     return render_template("sign_up.html",user=current_user)

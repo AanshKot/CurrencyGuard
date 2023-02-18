@@ -27,7 +27,7 @@
             </nav>
 
         </header> -->
-{% block content %}
+    {% block content %}
 
         {% with messages = get_flashed_messages() %}
             {% if messages %}
@@ -88,10 +88,10 @@
        
            <button type="submit" class ="btn btn-primary">Submit</button>
 
-           <a href="login.html">Already have an account?</a>
+           <a href="login">Already have an account?</a>
         
         </form>
 
-{% endblock %}
+    {% endblock %}
     </body>
 </html>

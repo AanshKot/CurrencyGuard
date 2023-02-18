@@ -12,8 +12,8 @@
     <body>
 
 
-{% block content %}
-
+    {% block content %}
+    
     {% with messages = get_flashed_messages() %}
     {% if messages %}
         {% for msg in messages%}
@@ -21,7 +21,7 @@
         {% endfor %}
     {% endif %}
     {% endwith %}
-    
+
         <form action="POST">
 
             <h1>Login</h1>
@@ -46,11 +46,13 @@
                 name="password" 
                 placeholder="Enter Password">
             </div>
+
+            <button type="submit" class ="btn btn-primary">Submit</button>
+
+            <a href="sign-up">Don't have an account? Create one here!</a>
         </form>
 
-        <button type="submit" class ="btn btn-primary">Submit</button>
 
-        <a href="../templates/sign_up.html">Don't have an account? Create one here!</a>
-{% endblock %}
+    {% endblock %}
     </body>
 </html>
