@@ -1,15 +1,106 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    {%block content%}
-    <h1>Hello World</h1>
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name = "viewport" content="width-device-width, initial scale=1.0">
+            <title>Currency Guard</title>
+            
 
-    {% endblock %}
-</body>
+            <script src="https://kit.fontawesome.com/3ce60671c2.js" crossorigin="anonymous"></script>
+            <!--
+            <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,900|Source+Sans+Pro:300,900&display=swap" rel="stylesheet">
+            -->
+            
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=Cuprum&family=Space+Mono&display=swap" rel="stylesheet">
+
+            <link rel="stylesheet" href="../static/styles-home.css">
+        </head>
+        <body>
+            {%block content%}
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for msg in messages%}
+                    <p>{{msg}}</p>
+                {% endfor %}
+            {% endif %}
+            {% endwith %}
+                <header>
+                    <img src="../static/images/logo.JPG" alt="website logo" class="website-logo">
+                    <nav class="nav">
+                        <ul class="nav__list">
+                            <li class="nav__item"><a href="home" class="nav__link">Home</a></li>
+                            <li class="nav__item"><a href="about" class="nav__link">About</a></li>
+                            <li class="nav__item"><a href="about" class="login_btn">Logout</a></li>
+                        </ul>     
+                    </nav>
+                </header>
+                <!-- Intro and About -->
+                <section class="flex__container">
+                    <form action="POST" class="About">
+
+                        <h1>Currency Convertor</h1>
+                        
+                        <div  class = "form-group">
+                            <label for="input">INPUT CURRENCY</label>
+                            <input 
+                            type="input" 
+                            class="form-control" 
+                            id="input" 
+                            name="in-currency" 
+                            placeholder="Enter your Currency Code (e.g USD/EUR) etc..">
+                        </div>
+                        <!-- what the "name" will do for us is it is what the attribute will be called when we pass the information in this field to our backend, when we submit this form its going to bundle up all the information in here and its going to use the name of these fields to represent them when it sends the information to the backend  -->
+                        
+                        <div class = "form-group">
+                            <label for="output">OUTPUT CURRENCY</label>
+                            <input 
+                            type="output" 
+                            class="form-control" 
+                            id="output" 
+                            name="out-currency" 
+                            placeholder="Enter your Currency Code (e.g USD/EUR) etc..">
+                        </div>
+            
+                        <button type="submit" class ="convert_btn">Convert</button>
+                        <div class = "form-group-output">
+                            <label for="output">Live Conversion: </label>
+                            <output
+                                name="out-conversion"
+                                placeholder="Value of Conversion Displayed Here">
+                            </output>
+                        </div>
+            
+                    </form>
+                    <!-- Image Section -->
+                    <section class="Image" id="image">
+                        <img src="../static/images/piggycoinimage.jpg" alt="piggy coin image" class="piggy-coin">
+                    </section>
+                </section>   
+                <!-- Footer -->
+                <footer class="footer">
+                    <div class="footer_col1">
+                        <h3><strong>Designed and Developed by Mazen Youssef and Aansh Kotian</strong></h3>
+                    </div>
+                    <div class="footer_col2">
+                        <ul class="social-list_mazen">
+                            <h3>Mazen</h3>
+                            <a class="social-list_link" href="https://www.linkedin.com/in/mazen-youssef-b68935164/">
+                                <i class="fa-brands fa-linkedin"></i>
+                            </a>
+                        </ul>
+                        <ul class="social-list_aansh">
+                            <h3>Aansh</h3>
+                            <a class="social-list_link" href="https://www.linkedin.com/in/aansh-kotian/">
+                                <i class="fa-brands fa-linkedin"></i>
+                            </a>
+                        </ul>
+                    </div>        
+                </footer>
+            
+            {% endblock %}
+            
+
+        </body>
 </html>
