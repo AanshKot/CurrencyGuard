@@ -29,8 +29,9 @@ def create_app():
     #import the classes User from models (in the same folder)
     from .models import User
     # from .models import Reminder
-    
-    # create_database(app) #create our database upon initialization of website
+  
+    with app.app_context():
+        db.create_all()
 
     login_manager = LoginManager()
     login_manager.login_view = 'auth.login' #where do we go if the user is not logged in, where should flask redirect us if there is a login required 
@@ -44,7 +45,7 @@ def create_app():
 
 #create our database
 #its going to check if the database already exists and if it doesn't its going to create it
-def create_database(app):
-    if not path.exists('currencyguard/' + DB_NAME):
-        db.create_all(app=app) #need to tell SQLalchemy which app we are creating the database for
-        print('Created Database')
+# def create_database(app):
+#     if not path.exists('currencyguard/' + DB_NAME):
+#         db.create_all(app=app) #need to tell SQLalchemy which app we are creating the database for
+#         print('Created Database')

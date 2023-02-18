@@ -91,6 +91,6 @@ def sign_up():
             flash(sign_up_msg,category="success")
             
             
-            return redirect(url_for("views.home"))
+            return redirect(url_for("views.about"))
 
     return render_template("sign_up.html",user=current_user)

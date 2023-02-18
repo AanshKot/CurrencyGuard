@@ -11,6 +11,17 @@
     </head>
     <body>
 
+
+{% block content %}
+
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+        {% for msg in messages%}
+            <p>{{msg}}</p>
+        {% endfor %}
+    {% endif %}
+    {% endwith %}
+    
         <form action="POST">
 
             <h1>Login</h1>
@@ -39,7 +50,7 @@
 
         <button type="submit" class ="btn btn-primary">Submit</button>
 
-        <a href="sign_up.html">Don't have an account? Create one here!</a>
-
+        <a href="../templates/sign_up.html">Don't have an account? Create one here!</a>
+{% endblock %}
     </body>
 </html>
