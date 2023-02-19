@@ -36,12 +36,7 @@ def home():
             exchange_rate_msg = f"Currency converted successfully:  {exchange_rate}"
 
             flash(exchange_rate_msg,category="success")
-
-            return redirect(url_for("views.home")) 
-
-
             
-
-
+            return render_template("home.html",live_rate=exchange_rate)
 
     return render_template("home.html")
