@@ -33,7 +33,7 @@ def home():
             return redirect(url_for("views.home")) 
         else:
 
-            exchange_rate_msg = f"Currency convereted successfully:  {exchange_rate}"
+            exchange_rate_msg = f"Currency converted successfully:  {exchange_rate}"
 
             flash(exchange_rate_msg,category="success")
 
