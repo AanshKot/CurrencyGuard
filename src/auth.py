@@ -32,7 +32,7 @@ def login():
 
                 # can use this to say welcome user_name, in the top right corner
                 name = user.username
-                login_message = "Logged in successfully as ".format(name)
+                login_message = f"Logged in successfully as {name}"
 
                 flash(login_message,category="success")
 

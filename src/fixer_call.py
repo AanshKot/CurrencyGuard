@@ -18,12 +18,19 @@ def fixer_call(output_cur,input_cur):
         return result
 
 
-def parse_data(resulting_data):
-        data = json.load(resulting_data)
-
+def parse_data(resulting_data,output_cur):
+        data = json.loads(resulting_data)
+        
         if data['success'] == False:
-               flash("Currency Conversion failed, please check inputted currencies",category="error")
-               
+               return "error"
+        else:
+            # need to extract data in the rates array
+            exchange_rate_array = data["rates"] 
+
+            exchange_rate_ratio = exchange_rate_array[f"{output_cur}"]
+            return exchange_rate_ratio
+
+
 
          
         
