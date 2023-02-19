@@ -24,11 +24,17 @@
                 <nav class="nav">
                     <ul class="nav__list">
                         <li class="nav__item"><a href="/" class="nav__link">About</a></li>
+                        
+                        {% if user.is_authenticated %}
+                        <li class="nav__item"><a href="/home" class="nav__link">Home</a></li>
+                        
+                        <li class="nav__item"><a href="/logout" class="login_btn">Logout</a></li>
 
-            
+                        {% else %}
+                        
                         <li class="nav__item"><a href="login" class="login_btn">Login</a></li>
                         
-
+                        {% endif %}
                     </ul>     
                 </nav>
             </header>
@@ -52,9 +58,11 @@
                         </p>
                     </div>
                     <div class="signup">
-                        
-                        <a href="sign-up" class="signup_btn">Sign Up</a>
-                        
+                        {% if user.is_authenticated %}
+                         
+                        {% else %}
+                         <a href="sign-up" class="signup_btn">Sign Up</a>
+                        {% endif %}
                     </div>
                 </section>
                 <!-- Image Section -->
