@@ -7,21 +7,102 @@ body,ul,h1,h2{
     
 }
 
+/*custom properties*/
+:root{
+    --ff-primary:'Cuprum', sans-serif;
+    --ff-secondary:'Space Mono', monospace;
+
+    --fw-reg:300;
+    --fw-bold:900;
+
+    --clr-light:#FBEEC1;
+    --clr-accent:#659DBD;
+
+    --fs-h1: 3rem;
+    --fs-h2: 2.25rem;
+    --fs-h3: 1.25rem;
+    --fs-body: 1rem;
+
+    --box-shadow: 0.25em 0.25em 0.75em rgba(0,0,0,0.25),
+                  0.125em 0.125em 0.25em rgba(0,0,0,0.15);
+}
+
 body{
     background-color: #FBEEC1;
 }
 
+
+
 header{
-    width: 100%;
-    background: #000000;
-    padding: 6px 12px;
-    display: inline-block;
     
+    position:relative;
+    background-color: var(--clr-light);
+    font-family: var(--ff-primary);
+    padding: 1rem 2rem;
+}
+
+header::after{
+    content:'';
+    display: table;
+    clear: both;
+}
+.website-logo{
+    width: 30%;
+    float: left;
+    padding: 0.5rem 0.5rem;
+    
+}
+.nav{
+   align-items: center;
+   float:right; 
+   padding: 1.875rem;
+   display:flex;
+}
+
+.nav__list{
+    display:flex;
+    list-style: none;
+    margin:0;
+    padding:0;
+    font-size: 1.25rem;
+    /*transition: font-size 200ms ease-in-out 1s;*/
+    
+}
+
+.nav__item{
+    margin-left: 7rem;
+    padding: 0.5rem;
+}
+
+.nav__link{
+    color: #444;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    
+}
+
+.nav__item a:hover{
+    /*color: var(--clr-accent);*/
+    transform: scale(5);
+    font-size: 1.5rem;
+}
+
+.login_btn{
+    background-color: var(--clr-accent);
+    color: #444;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 1em 1.5em;
+    border-radius: 0.75rem;
 }
 
 form{
     position: relative;
-    top: 250px;
+    margin-bottom: 2rem;
+    text-align: center;
+    
 }
 
 form h1{
@@ -67,21 +148,26 @@ form .form-group input{
 
 
 form button{
-    font-size: 15px;
+    font-size: var(--fs-h3);
     background: #659DBD;
     position: absolute;
     box-sizing: border-box;
-    padding: 10px;
+    padding: 0.75rem 1rem;
     font-family: 'Cuprum', sans-serif;
     white-space: nowrap;
     border-radius: 10px;
-    margin: 15px;
+    text-align: center;
+    margin-top: 4rem;
+    left:45%;
+    right:45%;
 }
+
 
 form a{
     text-align: center;
     text-decoration: none;
     position: absolute;
-    left: 45%;
-    margin: 17px ; 
+    left:40%;
+    right:40%;
+    background-color: aliceblue;
 }
